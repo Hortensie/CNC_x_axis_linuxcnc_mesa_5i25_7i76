@@ -36,7 +36,7 @@ setp    axis.x.jog-vel-mode 0
 setp    axis.y.jog-vel-mode 0
 setp    axis.z.jog-vel-mode 0
 
-#  --- MAPPING INPUT signals and modes to linux cnc signals / gui
+#  --- MAPPING INPUT signals and modes to linux cnc jog counts
 
 net x-jog-counter => axis.x.jog-counts
 net y-jog-counter => axis.y.jog-counts
@@ -50,7 +50,7 @@ net axis-select-b => axis.b.jog-enable
 net axis-select-c => axis.c.jog-enable 
 
 # Transfer input signal to linux cnc action (enable axis increment)
-# default increment is X1 = 0.001 then other two input switches set ot tp (X10= 0.01, X100 = 0.1)
+# default increment is X1 = 0.001 then other two input switches set to: (X10= 0.01, X100 = 0.1)
 
 setp mux4.0.in0 0.001
 setp mux4.0.in1 0.01
