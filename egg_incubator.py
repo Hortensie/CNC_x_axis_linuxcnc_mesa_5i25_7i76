@@ -1,18 +1,15 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-import sys
 import linuxcnc
-#try:
-#    s = linuxcnc.stat() # create a connection to the status channel
-#    s.poll() # get current values
-#except linuxcnc.error, detail:
-#    print "error", detail
-#    sys.exit(1)
-#for x in dir(s):
-    #if not x.startswith('_'):
-    #    print x, getattr(s,x)
-
-
 s = linuxcnc.stat()
-s.poll()
-print "Axis 1 homed: ", s.axis[1]["homed"]
+c = linuxcnc.command()
+
+def ok_for_mdi():
+        s.poll()
+        return not s.estop and s.enabled and (s.homed.count(1) == s.axes) and (s.interp_state == linuxcnc.INTERP_IDLE)
+        print ("OK")
+
+if ok_for_mdi():
+        c.mode(linuxcnc.MODE_MDI)
+        c.wait_complete() # wait until mode switch executed
+        c.mdi("G0 X10 Y10")
