@@ -1,0 +1,5 @@
+NVIDIA drivers setup
+https://wiki.debian.org/NvidiaGraphicsDrivers#stretch
+
+probe ui how to
+https://kcjengr.github.io/probe_basic/dev_install.html
