@@ -1,0 +1,52 @@
+<pyvcp>
+  <label>
+      <text>"Target Temperature:"</text>
+  </label>
+  <spinbox>
+      <halpin>"target_temp"</halpin>
+      <min_>-25</min_>
+      <max_>40</max_>
+      <initval>0</initval>
+      <resolution>0.1</resolution>
+      <format>"2.3f"</format>
+      <font>("Helvetica",24)</font>
+  </spinbox>
+
+  <label>
+      <text>"Temperature:"</text>
+  </label>
+  <meter>
+    <halpin>"temp"</halpin>
+    <text>"Temperature"</text>
+    <subtext>"Celsius"</subtext>
+    <size>250</size>
+    <min_>25</min_>
+    <max_>50</max_>
+    <majorscale>1</majorscale>
+    <minorscale>1</minorscale>
+    <region1>(39,50,"yellow")</region1>
+    <region2>(36,38,"green")</region2>
+    <region3>(0,35,"red")</region3>
+   </meter>
+
+   <label>
+        <text>"Current Temperature:"</text>
+   </label>
+
+  <number>
+    <halpin>"current_temp"</halpin>
+    <font>("Helvetica",24)</font>
+    <format>"+4.4f"</format>
+ </number>
+
+ <label>
+     <text>"Current Humidity:"</text>
+ </label>
+ <number>
+    <halpin>"current_hum"</halpin>
+    <font>("Helvetica",24)</font>
+    <format>"+4.4f"</format>
+ </number>
+
+
+</pyvcp>
