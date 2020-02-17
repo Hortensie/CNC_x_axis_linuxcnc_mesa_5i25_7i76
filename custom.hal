@@ -42,12 +42,12 @@ net x-jog-counter => axis.x.jog-counts
 net y-jog-counter => axis.y.jog-counts
 
 # Transfer input signal to linux cnc action (enable axis selection)
-net axis-select-x => axis.x.jog-enable 
-net axis-select-y => axis.y.jog-enable 
-net axis-select-z => axis.z.jog-enable 
-net axis-select-a => axis.a.jog-enable 
-net axis-select-b => axis.b.jog-enable 
-net axis-select-c => axis.c.jog-enable 
+net axis-select-x => axis.x.jog-enable
+net axis-select-y => axis.y.jog-enable
+net axis-select-z => axis.z.jog-enable
+net axis-select-a => axis.a.jog-enable
+net axis-select-b => axis.b.jog-enable
+net axis-select-c => axis.c.jog-enable
 
 # Transfer input signal to linux cnc action (enable axis increment)
 # default increment is X1 = 0.001 then other two input switches set ot tp (X10= 0.01, X100 = 0.1)
@@ -73,3 +73,6 @@ net estop_prog => and2.0.in0
 net estop_jog => and2.0.in1
 net and2out <= and2.0.out => iocontrol.0.emc-enable-in
 
+#custom pins for egg incubator python project and pyVCP GUI
+
+#net temp <= passthrough.in

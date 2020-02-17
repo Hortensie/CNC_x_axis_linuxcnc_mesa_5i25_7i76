@@ -2,11 +2,17 @@
 # -*- coding: utf-8 -*-
 import linuxcnc
 import sys
+import hal, time
 
 s = linuxcnc.stat()
 c = linuxcnc.command()
 
-
+# create two separate hal components
+#h = hal.component("passthrough")
+h = hal.component("pyvcp")
+#h.newpin("current_hum", hal.HAL_FLOAT, hal.HAL_IN)
+#h.newpin("out", hal.HAL_FLOAT, hal.HAL_OUT)
+h.ready()
 
 def ok_for_mdi_check():
         s.poll()
@@ -40,5 +46,14 @@ def move_axis_to(x, y, z):
         sys.exit(1)
 
 # move motor specific x,y,z position
-move_axis_to(0,0,0)
-move_axis_to(10,10,0)
+
+try:
+    while 1:
+        time.sleep(1)
+        #h['out'] = h['in']
+        h['current_hum']=2.11
+
+        #move_axis_to(0,0,0)
+        #move_axis_to(3,3,0)
+except KeyboardInterrupt:
+    raise SystemExit
