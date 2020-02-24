@@ -1,0 +1,7 @@
+loadrt classicladder_rt numPhysInputs=15 numPhysOutputs=15 numS32in=10 numS32out=10 numFloatIn=10 numFloatOut=10 numBits=50 numWords=50
+
+addf classicladder.0.refresh servo-thread
+
+# Load Classicladder with modbus master included (GUI must run for Modbus)
+
+loadusr classicladder --modmaster custom.clp

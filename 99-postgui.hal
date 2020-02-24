@@ -1,13 +1,15 @@
 # These files are loaded post GUI, in the order they appear
 
 source custom_postgui.hal
-loadrt mux2 count=1
-addf mux2.0 servo-thread
+
+#loadrt mux2 count=1
+#addf mux2.0 servo-thread
+#setp mux2.0.sel 0
+##net temp_py mux2.0.in0 <= passthrough.in
+#setp mux2.0.in0 0.2
+#setp mux2.0.in1 0.1
+#net python_temperature pyvcp.current_temp <= mux2.0.out
 
 
-setp mux2.0.sel 0
-#net temp_py mux2.0.in0 <= passthrough.in
-setp mux2.0.in0 0.2
-setp mux2.0.in1 0.1
-
-net python_temperature pyvcp.current_temp <= mux2.0.out
+#net mesa-C101 gladevcp.hal_led1 <= hm2_5i25.0.led.CR01
+net mesa-field_voltage gladevcp.mesa_field_voltage <= hm2_5i25.0.7i76.0.0.fieldvoltage

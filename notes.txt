@@ -3,3 +3,6 @@ https://wiki.debian.org/NvidiaGraphicsDrivers#stretch
 
 probe ui how to
 https://kcjengr.github.io/probe_basic/dev_install.html
+
+how to install glade
+https://forum.linuxcnc.org/9-installing-linuxcnc/34719-setting-up-linuxcnc-stretch-uspace-to-build-glade-linuxcnc
