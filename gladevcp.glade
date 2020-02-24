@@ -13,12 +13,14 @@
         <property name="can_focus">False</property>
         <child>
           <object class="GtkTable" id="table1">
+            <property name="width_request">300</property>
+            <property name="height_request">200</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <child>
               <object class="HAL_Meter" id="mesa_field_voltage">
-                <property name="width_request">150</property>
-                <property name="height_request">150</property>
+                <property name="width_request">200</property>
+                <property name="height_request">200</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="bg_color">#ffffffffffff</property>
